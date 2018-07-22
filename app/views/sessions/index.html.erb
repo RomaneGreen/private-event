@@ -1,0 +1,9 @@
+<h1>Welcome to private events</h1>
+
+<p><%= link_to "Sign up", new_user_path %></p>
+
+<p><%= link_to "Log in", sessions_new_path %></p>
+
+
+
+<%= link_to 'Log out', logout_path, method: :delete,data: { confirm: 'Are you sure?' } %>
