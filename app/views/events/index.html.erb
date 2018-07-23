@@ -1,0 +1,16 @@
+<h1>Events Index</h1>
+
+
+<% @event.each do |e| %>
+
+<h4>Event host :</h4> <%=e.creator.name%>
+
+<h4>Event date:</h4>  <%=e.event_date%>
+
+ <h4>Event description:</h4> <%=e.description%>
+
+  <br>
+  <br>
+  <br>
+
+<% end %>

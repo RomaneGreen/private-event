@@ -1,4 +1,16 @@
 <%=@user.name%>
 
+<%=@user.events.each do |e|%>
+
+<h4>Event date:</h4>  <%=e.event_date%>
+
+ <h4>Event description:</h4> <%=e.description%>
+
+  <br>
+  <br>
+  <br>
+
+<% end %>
+
 
 <%= link_to 'Log out', logout_path, method: :delete,data: { confirm: 'Are you sure?' } %>
