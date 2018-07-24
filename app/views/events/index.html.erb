@@ -1,13 +1,32 @@
-<h1>Events Index</h1>
+<h1>Events Index</h1>   <p><%= link_to "Home", root_path %></p> <p><%= link_to "New Event", new_event_path %></p>
 
 
-<% @event.each do |e| %>
+<h3>Upcoming Events</h3>
 
-<h4>Event host :</h4> <%=e.creator.name%>
+<% @event.upcoming_events.each do |u| %>
 
-<h4>Event date:</h4>  <%=e.event_date%>
+<h4>Event host :</h4> <%=u.creator.name%>
 
- <h4>Event description:</h4> <%=e.description%>
+<h4>Event date:</h4>  <%=u.event_date%>
+
+ <h4>Event description:</h4> <%=u.description%>
+
+  <br>
+  <br>
+  <br>
+
+<% end %>
+
+
+<h1>Past Events</h1>
+
+<% @event.previous_events.each do |p| %>
+
+<h4>Event host :</h4> <%=p.creator.name%>
+
+<h4>Event date:</h4>  <%=p.event_date%>
+
+ <h4>Event description:</h4> <%=p.description%>
 
   <br>
   <br>

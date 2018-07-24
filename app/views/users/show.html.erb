@@ -1,6 +1,38 @@
-<%=@user.name%>
+<h1><%=@user.name%>'s events</h1> <p><%= link_to "Home", root_path %></p> <p><%= link_to "New Event", new_event_path %></p>
+
+<h3>Upcoming events</h3>
+
+<%=@upcoming_events.each do |u|%>
+
+<h4>Event date:</h4>  <%=u.event_date%>
+
+ <h4>Event description:</h4> <%=u.description%>
+
+  <br>
+  <br>
+  <br>
+<% end %>
+
+
+<h3>Previous events</h3>
+
+<%=@previous_events.each do |f|%>
+
+<h4>Event date:</h4>  <%=f.event_date%>
+
+ <h4>Event description:</h4> <%=f.description%>
+
+  <br>
+  <br>
+  <br>
+<% end %>
+
+
 
 <%=@user.events.each do |e|%>
+
+
+
 
 <h4>Event date:</h4>  <%=e.event_date%>
 
@@ -11,6 +43,22 @@
   <br>
 
 <% end %>
+
+<h1>Events <%=@user.name%> is attending</h1>
+
+<%=@user.attended_events.each do |e|%>
+
+<h4>Event date:</h4>  <%=e.event_date%>
+
+ <h4>Event description:</h4> <%=e.description%>
+
+  <br>
+  <br>
+  <br>
+
+<% end %>
+
+
 
 
 <%= link_to 'Log out', logout_path, method: :delete,data: { confirm: 'Are you sure?' } %>

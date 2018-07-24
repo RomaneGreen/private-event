@@ -1,4 +1,15 @@
-<p>I show</p>
+
+<h1>Event organizer:<%=@event.creator.name%></h1>
 
 
-<%=@event.creator.name%>
+<h1>Event attendees</h1>
+
+<%=@event.attendees.each do |e|%>
+<li><%=e.name%></li>
+
+
+<br>
+<br>
+<br>
+
+<% end %>
